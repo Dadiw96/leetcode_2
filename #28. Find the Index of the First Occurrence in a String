@@ -1,0 +1,62 @@
+#28. Find the Index of the First Occurrence in a String
+
+#Work
+#Given two strings needle and haystack, 
+#return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
+
+#Rozwiązanie
+
+def strStr(haystack, needle):
+    if not needle: 
+        return 0
+    try: 
+        return haystack.index(needle)
+    except ValueError: 
+        return -1
+#Example 1:
+#Input: haystack = "sadbutsad", needle = "sad"
+#Output: 0
+haystack = "sadbutsad"
+needle = "sad"
+output = 0
+print(f"#Example 1:\nInput: haystack = '{haystack}', needle = '{needle}'\nOutput: {output} ==>", strStr(haystack, needle))
+
+#Example 2:
+#Input: haystack = "leetcode", needle = "leeto"
+#Output: -1
+haystack = "leetcode"
+needle = "leeto"
+output = -1
+print(f"#Example 2:\nInput: haystack = '{haystack}', needle = '{needle}'\nOutput: {output} ==>", strStr(haystack, needle))
+
+#Boundary Example 1:
+#Input: haystack = "a", needle = "a"  # Single character match
+#Output: 0
+haystack = "a"
+needle = "a"
+output = 0
+print(f"#Boundary Example 1:\nInput: haystack = '{haystack}', needle = '{needle}'\nOutput: {output} ==>", strStr(haystack, needle))
+
+#Boundary Example 2:
+#Input: haystack = "hello", needle = ""  # Empty needle, returns 0
+#Output: 0
+haystack = "hello"
+needle = ""
+output = 0
+print(f"#Boundary Example 2:\nInput: haystack = '{haystack}', needle = '{needle}'\nOutput: {output} ==>", strStr(haystack, needle))
+
+#Boundary Example 3:
+#Input: haystack = "aaaaa", needle = "bba"  # No occurrence
+#Output: -1
+haystack = "aaaaa"
+needle = "bba"
+output = -1
+print(f"#Boundary Example 3:\nInput: haystack = '{haystack}', needle = '{needle}'\nOutput: {output} ==>", strStr(haystack, needle))
+
+#Boundary Example 4:
+#Input: haystack = "mississippi", needle = "issip"  # Substring occurrence
+#Output: 4
+haystack = "mississippi"
+needle = "issip"
+output = 4
+print(f"#Boundary Example 4:\nInput: haystack = '{haystack}', needle = '{needle}'\nOutput: {output} ==>", strStr(haystack, needle))
