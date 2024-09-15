@@ -1,0 +1,68 @@
+#1768. Merge Strings Alternately
+
+#Work
+#You are given two strings word1 and word2. 
+#Merge the strings by alternating characters from the two strings until one of the strings is completely used up.
+#If there are remaining characters after the end of either string, append them to the end of the merged string.
+#Return the merged string.
+
+#Rozwiązanie
+
+def mergeAlternately(word1, word2):
+    result = []
+    short, long = (word1, word2) if len(word1) < len(word2) else (word2,word1)
+    i = 0
+    while i < (len(short)):
+        result.append(word1[i]+word2[i])
+        i += 1
+    result.append(long[i:])    
+    return "".join(result)    
+        
+
+#Example 1:
+#Input: word1 = "abc", word2 = "pqr"
+#Output: "apbqcr"
+word1 = "abc"
+word2 = "pqr"
+output = "apbqcr"
+print(f"#Example 1:\nInput: word1 = {word1}, word2 = {word2}\nOutput: {output} ==>", mergeAlternately(word1, word2))
+
+#Example 2:
+#Input: word1 = "ab", word2 = "pqrs"
+#Output: "apbqrs"
+word1 = "ab"
+word2 = "pqrs"
+output = "apbqrs"
+print(f"#Example 2:\nInput: word1 = {word1}, word2 = {word2}\nOutput: {output} ==>", mergeAlternately(word1, word2))
+
+#Example 3:
+#Input: word1 = "abcd", word2 = "pq"
+#Output: "apbqcd"
+word1 = "abcd"
+word2 = "pq"
+output = "apbqcd"
+print(f"#Example 3:\nInput: word1 = {word1}, word2 = {word2}\nOutput: {output} ==>", mergeAlternately(word1, word2))
+
+#Boundary Example 1:
+#Input: word1 = "", word2 = "abc"  # One string is empty
+#Output: "abc"
+word1 = ""
+word2 = "abc"
+output = "abc"
+print(f"#Boundary Example 1:\nInput: word1 = {word1}, word2 = {word2}\nOutput: {output} ==>", mergeAlternately(word1, word2))
+
+#Boundary Example 2:
+#Input: word1 = "xyz", word2 = ""  # One string is empty
+#Output: "xyz"
+word1 = "xyz"
+word2 = ""
+output = "xyz"
+print(f"#Boundary Example 2:\nInput: word1 = {word1}, word2 = {word2}\nOutput: {output} ==>", mergeAlternately(word1, word2))
+
+#Boundary Example 3:
+#Input: word1 = "abcdefgh", word2 = "12345678"  # Both strings are of equal length
+#Output: "a1b2c3d4e5f6g7h8"
+word1 = "abcdefgh"
+word2 = "12345678"
+output = "a1b2c3d4e5f6g7h8"
+print(f"#Boundary Example 3:\nInput: word1 = {word1}, word2 = {word2}\nOutput: {output} ==>", mergeAlternately(word1, word2))

@@ -1,0 +1,60 @@
+#459. Repeated Substring Pattern
+
+#Work
+#Given a string s, check if it can be constructed by taking a substring of it and appending multiple copies of the substring together.
+#Return true if it can be constructed in such a way, otherwise return false.
+
+#Rozwiązanie
+
+def repeatedSubstringPattern(s):
+    return s in (s+s)[1:-1]
+        
+
+#Example 1:
+#Input: s = "abab"
+#Output: True
+s = "abab"
+output = True
+print(f"#Example 1:\nInput: s = '{s}'\nOutput: {output} ==>", repeatedSubstringPattern(s))
+
+#Example 2:
+#Input: s = "aba"
+#Output: False
+s = "aba"
+output = False
+print(f"#Example 2:\nInput: s = '{s}'\nOutput: {output} ==>", repeatedSubstringPattern(s))
+
+#Example 3:
+#Input: s = "abcabcabcabc"
+#Output: True
+s = "abcabcabcabc"
+output = True
+print(f"#Example 3:\nInput: s = '{s}'\nOutput: {output} ==>", repeatedSubstringPattern(s))
+
+#Boundary Example 1:
+#Input: s = "a"  # Single character
+#Output: False
+s = "a"
+output = False
+print(f"#Boundary Example 1:\nInput: s = '{s}'\nOutput: {output} ==>", repeatedSubstringPattern(s))
+
+#Boundary Example 2:
+#Input: s = "abababab"  # Repeats "ab" 4 times
+#Output: True
+s = "abababab"
+output = True
+print(f"#Boundary Example 2:\nInput: s = '{s}'\nOutput: {output} ==>", repeatedSubstringPattern(s))
+
+#Boundary Example 3:
+#Input: s = "abcdabcdabcd"  # Repeats "abcd" 3 times
+#Output: True
+s = "abcdabcdabcd"
+output = True
+print(f"#Boundary Example 3:\nInput: s = '{s}'\nOutput: {output} ==>", repeatedSubstringPattern(s))
+
+#Boundary Example 4:
+#Input: s = "zzzzzzzzzzzzzzzzzzzz"  # Repeats "z" 20 times
+#Output: True
+s = "zzzzzzzzzzzzzzzzzzzz"
+output = True
+print(f"#Boundary Example 4:\nInput: s = '{s}'\nOutput: {output} ==>", repeatedSubstringPattern(s))
