@@ -5,9 +5,15 @@
 #An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
 
 #Rozwiązanie
-
+import collections
 def isAnagram(s, t):
-    return ("".join(reversed(s)))  == t 
+        
+    ds = collections.Counter(s)
+    dt = collections.Counter(t)
+    return ds == dt
+    
+    
+  
 
 #Example 1:
 #Input: s = "anagram", t = "nagaram"
