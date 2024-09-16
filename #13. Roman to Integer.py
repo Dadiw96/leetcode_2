@@ -8,7 +8,7 @@
 #Given a roman numeral, convert it to an integer.
 
 #Rozwiązanie
-
+#blad dla D
 def romanToInt(s):
     r = 0
     rom = {"I" : 1, "V" : 5, "X": 10, "L":50,
@@ -18,7 +18,7 @@ def romanToInt(s):
             r -= rom[s[i]]
         else:
             r += rom[s[i]]  
-    return r + rom[s[i+1]]
+    return r + rom[s[-1]]
         
         
         
