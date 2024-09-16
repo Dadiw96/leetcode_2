@@ -8,7 +8,9 @@
 #Rozwiązanie
 
 def findTheDifference(s, t):
-    return [char for char in t if s.count(char ) != t.count(char ) ]
+    for char in t:
+        if s.count(char) != t.count(char):
+            return char
 
 #Example 1:
 #Input: s = "abcd", t = "abcde"
