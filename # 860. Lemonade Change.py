@@ -28,7 +28,7 @@ def lemonadeChange(bills):
         if b == 5:               
             dic[5] += 1
         elif b == 10:
-            if dic[5] < 0:
+            if dic[5] < 1:
                 return False
             else:
                 dic[5] -= 1
@@ -88,8 +88,8 @@ output = True
 print(f"Input: {bills}\nOutput: {output} ==>", lemonadeChange(bills))
 
 # Boundary Example 2:
-# Input: bills = [20,20,20]
+# Input: bills = [10 ]
 # Output: False
-bills = [20,20,20]
+bills = [10]
 output = False
 print(f"Input: {bills}\nOutput: {output} ==>", lemonadeChange(bills))
