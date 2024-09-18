@@ -1,0 +1,91 @@
+# 415. Add Strings
+
+# Work
+# Given two non-negative integers, num1 and num2 represented as string, 
+# return the sum of num1 and num2 as a string.
+
+# You must solve the problem without using any built-in library for handling large integers (such as BigInteger).
+# You must also not convert the inputs to integers directly.
+
+# Function Signature:
+# def addStrings(num1: str, num2: str) -> str:
+
+# Input:
+# - Two strings num1 and num2 consisting of digits (0-9) where 1 <= num1.length, num2.length <= 10^4.
+# - num1 and num2 do not contain any leading zeros except for the number zero itself.
+
+# Output:
+# - Return the sum of num1 and num2 as a string.
+
+# Solution
+
+def addStrings(num1, num2):
+    i = len(num1) - 1
+    j = len(num2) - 1
+    c = 0
+    total = []
+    while i  >= 0 or j >= 0:
+        dig1, dig2 = 0, 0
+        if i >= 0:
+            dig1 = ord(num1[i]) - ord("0")
+        if j >= 0:
+            dig2 = ord(num2[j]) - ord("0")
+        c += (dig1+dig2)
+        total = [str(c%10)] + total
+        c //= 10
+        i -= 1
+        j -= 1     
+    if c > 0:
+        total = [str(c)] + total
+    return total    
+    
+    
+    
+    
+    
+    
+    
+    
+    #for j in reversed(range(l2)):
+        
+    
+
+# Example 1:
+# Input: num1 = "11", num2 = "123"
+# Output: "134"
+num1 = "11"
+num2 = "123"
+output = "134"
+print(f"Input: num1 = {num1}, num2 = {num2}\nOutput: {output} ==>", addStrings(num1, num2))
+
+# Example 2:
+# Input: num1 = "456", num2 = "77"
+# Output: "533"
+num1 = "456"
+num2 = "77"
+output = "533"
+print(f"Input: num1 = {num1}, num2 = {num2}\nOutput: {output} ==>", addStrings(num1, num2))
+
+# Example 3:
+# Input: num1 = "0", num2 = "0"
+# Output: "0"
+num1 = "0"
+num2 = "0"
+output = "0"
+print(f"Input: num1 = {num1}, num2 = {num2}\nOutput: {output} ==>", addStrings(num1, num2))
+
+# Boundary Example 1:
+# Input: num1 = "999", num2 = "1"
+# Output: "1000"
+num1 = "999"
+num2 = "1"
+output = "1000"
+print(f"Input: num1 = {num1}, num2 = {num2}\nOutput: {output} ==>", addStrings(num1, num2))
+
+# Boundary Example 2:
+# Input: num1 = "123456789", num2 = "987654321"
+# Output: "1111111110"
+num1 = "123456789"
+num2 = "987654321"
+output = "1111111110"
+#print(f"Input: num1 = {num1}, num2 = {num2}\nOutput: {output} ==>", addStrings(num1, num2))
