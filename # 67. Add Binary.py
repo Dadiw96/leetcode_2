@@ -16,10 +16,29 @@
 # Solution
 
 def addBinary(a: str, b: str) -> str:
-    r = []
+    r, c = [], 0
+    i, j = len(a) - 1, len(b) - 1
+    while i >= 0 or j >= 0 or c:
+        if i >= 0:
+            c +=int(a[i])
+            i -= 1
+        if j >= 0:
+            c += int(b[j])
+            j -= 1
+        r.append(str(c%2))
+        c //= 2
+    return "".join(r[::-1])        
+            
     
-                
-
+    
+    
+    
+    
+  
+  
+  
+  
+   
 # Example 1:
 # Input: a = "11", b = "1"
 # Output: "100"
